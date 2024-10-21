@@ -1,9 +1,12 @@
 import "./App.css";
 
+import MyTitle from "./MyTitle";
+
+
 function App() {
   return (
     <section>
-      <h1>Hello React</h1>
+      <MyTitle />
     </section>
   );
 }
