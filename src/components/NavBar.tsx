@@ -12,31 +12,23 @@ interface NavBarProps {
 }
 
 const NavBar: React.FC<NavBarProps> = ({ pokemonIndex, setPokemonIndex, pokemonList }) => {
-  const handlePrevious = () => {
-    if (pokemonIndex > 0) {
-      setPokemonIndex(pokemonIndex - 1);
-    }
-  };
-
-  const handleNext = () => {
-    if (pokemonIndex < pokemonList.length - 1) {
-      setPokemonIndex(pokemonIndex + 1);
-    }
-  };
-
   return (
     <div>
       <PokemonCard pokemon={pokemonList[pokemonIndex]} />
 
-      {pokemonIndex > 0 && (
-        <button type="button" onClick={handlePrevious}>Précédent</button>
-      )}
-
-      {pokemonIndex < pokemonList.length - 1 && (
-        <button type="button" onClick={handleNext}>Suivant</button>
-      )}
+      {}
+      {pokemonList.map((pokemon, index) => (
+        <button
+          key={pokemon.name}
+          type="button"
+          onClick={() => setPokemonIndex(index)} 
+        >
+          {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)} {}
+        </button>
+      ))}
     </div>
   );
 };
 
 export default NavBar;
+
