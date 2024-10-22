@@ -1,6 +1,6 @@
 import "./App.css";
 import NavBar from './components/NavBar'; 
-import { useState } from "react";
+import { useState , useEffect } from "react";
 
 function App() {
   const [pokemonIndex, setPokemonIndex] = useState(0);
@@ -30,6 +30,10 @@ function App() {
       name: "mew",
     },
   ];
+
+  useEffect(() => {
+    alert("hello pokemon trainer :)");
+  }, []);
 
   return (
     <div>
