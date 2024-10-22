@@ -8,27 +8,25 @@ const pokemonList = [
     },
   ];
   
-  function PokemonCard() {
+function PokemonCard(props) {
+  console.log(props);
 
-    const pokemon = pokemonList;
-    console.log(pokemon);
-  
-    return (
-      <div>
-        {}
-        {pokemon.map((poke, index) => (
-          <figure key={index} className="pokemon-card">
-            {}
-            {poke.imgSrc ? (
-              <img src={poke.imgSrc} alt={poke.name} />
-            ) : (
-              <p>???</p>
-            )}
-            <figcaption>{poke.name}</figcaption>
-          </figure>
-        ))}
-      </div>
-    );
-  }
+  // On accède directement au Pokémon à l'index 1
+  const pokemon = pokemonList[1];
+  console.log(pokemon);
+
+  return (
+    <div>
+      <figure className="pokemon-card">
+        {pokemon.imgSrc ? (
+          <img src={pokemon.imgSrc} alt={pokemon.name} />
+        ) : (
+          <p>???</p>
+        )}
+        <figcaption>{pokemon.name}</figcaption>
+      </figure>
+    </div>
+  );
+}
   
   export default PokemonCard;
