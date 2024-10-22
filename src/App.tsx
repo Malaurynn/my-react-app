@@ -1,5 +1,5 @@
 import "./App.css";
-import NavBar from './components/NavBar'; // Importez NavBar ici
+import NavBar from './components/NavBar';
 import { useState } from "react";
 
 function App() {
